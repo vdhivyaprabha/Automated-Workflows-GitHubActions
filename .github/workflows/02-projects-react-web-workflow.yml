@@ -1,0 +1,30 @@
+name: Deploy-React-Website
+on: [workflow_dispatch]
+jobs:
+  SetUp-React-Environment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download the Code from the repositary.
+        uses: actions/checkout@v3
+      - name: Install Necessary Dependencies
+        run: npm install
+      - name: Perform Static Code Analysis.
+        run: npm run lint
+      - name: Run the Unit tests developed as part of the code.
+        run: npm run test
+  Build-React-Website:
+    needs: SetUp-React-Environment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download the Code from the repositary.
+        uses: actions/checkout@v3
+      - name: Install Necessary Dependencies
+        run: npm install
+      - name: Build the website
+        run: npm run build
+  Deploy-React-Website:
+    needs: Build-React-Website
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy the Website Build to the host
+        run: npm run dev

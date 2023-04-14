@@ -6,9 +6,6 @@ class TestCreateEncryptionPassword(unittest.TestCase):
     number_of_passwords = 5
     length_of_password = 15
 
-    def __init__(self):
-      print("Initializing Parameters for the Test")
-
     def test_password_creation(self):
         password_instance = CreateEncryptionPasswords(number_of_passwords)
         generated_passwords_list = password_instance.trigger_creation(length_of_password)

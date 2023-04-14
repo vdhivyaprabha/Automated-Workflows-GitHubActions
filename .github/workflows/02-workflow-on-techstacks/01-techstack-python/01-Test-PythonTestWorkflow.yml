@@ -1,0 +1,26 @@
+name: Workflow Demonstration of Standalone Python Project.
+on: [push,workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.10"]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Python Environment Set Up
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies for running the Pasword Generator. 
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Executing Creation of Password using Python.
+        working-directory: /01-Python-Projects/01-Password-Generator
+        run: |
+          python CreateEncryptionPasswords.py
+      - name: Test the password Creation through TestCreateEncryptionPassword
+        working-directory: /01-Python-Projects/01-Password-Generator
+        run: |
+          python TestCreateEncryptionPassword.py

@@ -1,4 +1,4 @@
-name: Workflow Demonstration of Standalone Java Project.
+name: Maven-Deployment-Java
 on: [workflow_dispatch]
 jobs:
   build:

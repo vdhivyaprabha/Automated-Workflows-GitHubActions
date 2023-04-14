@@ -1,5 +1,5 @@
-name: Workflow Demonstration of Standalone Python Project.
-on: [push,workflow_dispatch]
+name: Password-Generator-Python
+on: [workflow_dispatch]
 jobs:
   build:
     runs-on: ubuntu-latest

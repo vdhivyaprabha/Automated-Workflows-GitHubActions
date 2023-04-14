@@ -1,5 +1,5 @@
 name: Multiline Command Test Workflow
-run-name: Testing Multiline Commands 🚀
+run-name: Multiline Command test 🚀
 on: [workflow_dispatch]
 jobs:
   build:

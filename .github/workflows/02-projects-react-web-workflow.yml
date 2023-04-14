@@ -7,24 +7,31 @@ jobs:
       - name: Download the Code from the repositary.
         uses: actions/checkout@v3
       - name: Install Necessary Dependencies
+        working-directory: ${{ github.workspace }}/02-React-Projects/01-react-project-hogwarts
         run: npm install
       - name: Perform Static Code Analysis.
+        working-directory: ${{ github.workspace }}/02-React-Projects/01-react-project-hogwarts
         run: npm run lint
       - name: Run the Unit tests developed as part of the code.
+        working-directory: ${{ github.workspace }}/02-React-Projects/01-react-project-hogwarts
         run: npm run test
   Build-React-Website:
     needs: SetUp-React-Environment
     runs-on: ubuntu-latest
     steps:
       - name: Download the Code from the repositary.
+        working-directory: ${{ github.workspace }}/02-React-Projects/01-react-project-hogwarts
         uses: actions/checkout@v3
       - name: Install Necessary Dependencies
+        working-directory: ${{ github.workspace }}/02-React-Projects/01-react-project-hogwarts
         run: npm install
       - name: Build the website
+        working-directory: ${{ github.workspace }}/02-React-Projects/01-react-project-hogwarts
         run: npm run build
   Deploy-React-Website:
     needs: Build-React-Website
     runs-on: ubuntu-latest
     steps:
       - name: Deploy the Website Build to the host
+        working-directory: ${{ github.workspace }}/02-React-Projects/01-react-project-hogwarts
         run: npm run dev

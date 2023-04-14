@@ -2,13 +2,13 @@ name: Multiline Command Test Workflow
 run-name: Multiline Command test 🚀
 on: [workflow_dispatch]
 jobs:
-  build:
+  Execute-MultiLine-Commands:
   name: Multiline Commands Runner Evaluation.
   runs-on: ubuntu-latest
   steps:
-  - uses: actions/checkout@v2
-  - name: Execute Multiline Comments
-    run: |
-      cd /
-      echo "Listing the files in the currengt Working directory"
-      ls -lrt
+    - uses: actions/checkout@v2
+    - name: Execute Multiline Comments
+      run: |
+        cd /
+        echo "Listing the files in the currengt Working directory"
+        ls -lrt

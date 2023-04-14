@@ -1,7 +1,7 @@
 name: Maven-Deployment-Java
 on: [workflow_dispatch]
 jobs:
-  build:
+  SetUp-Java-Environment:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

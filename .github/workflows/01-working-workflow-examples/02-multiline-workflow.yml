@@ -1,13 +1,14 @@
-name: Running Multiline Commands in Runner.
-run-name: ${{ github.actor }} is testing multiline commands in the ubuntu runner 🚀
-on: [push,workflow_dispatch]
+name: Multiline Command Test Workflow
+run-name: Testing Multiline Commands 🚀
+on: [workflow_dispatch]
 jobs:
   build:
   name: Multiline Commands Runner Evaluation.
   runs-on: ubuntu-latest
   steps:
   - uses: actions/checkout@v2
-  - name: Write a multi-line message
+  - name: Execute Multiline Comments
     run: |
-      echo This demo file shows a 
-      echo very basic and easy-to-understand workflow.
+      cd /
+      echo "Listing the files in the currengt Working directory"
+      ls -lrt

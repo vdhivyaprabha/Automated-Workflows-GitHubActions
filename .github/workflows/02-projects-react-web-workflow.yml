@@ -20,7 +20,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download the Code from the repositary.
-        working-directory: ${{ github.workspace }}/02-React-Projects/01-react-project-hogwarts
         uses: actions/checkout@v3
       - name: Install Necessary Dependencies
         working-directory: ${{ github.workspace }}/02-React-Projects/01-react-project-hogwarts

@@ -36,6 +36,6 @@ jobs:
       - name: Install Necessary Dependencies
         working-directory: ${{ github.workspace }}/02-React-Projects/01-react-project-hogwarts
         run: npm install
-      - name: Deploy the Website Build to the host
-        working-directory: ${{ github.workspace }}/02-React-Projects/01-react-project-hogwarts
-        run: npm run dev
+#      - name: Deploy the Website Build to the host
+#        working-directory: ${{ github.workspace }}/02-React-Projects/01-react-project-hogwarts
+#        run: npm run dev
